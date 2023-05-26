@@ -5,12 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
-
 import static java.util.Comparator.comparingDouble;
 import static java.util.Comparator.comparingInt;
-
 public class Catalogue extends  Product{
-
 
     public Catalogue(String name, String type, int id, double weight, long price) {
         super(name, type, id, weight, price);
