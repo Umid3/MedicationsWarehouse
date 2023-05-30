@@ -9,7 +9,7 @@ public class ConsoleView {
         System.out.println("Developer: John Smith (johnsmith@example.com)");
 
 
-        // Display the available commands
+
         System.out.println("\nAvailable commands:");
         System.out.println("1. Search products");
         System.out.println("2. List all products");
