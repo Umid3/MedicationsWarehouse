@@ -11,7 +11,7 @@ public class LoadMedications {
     public static List<Medications> loadInventory() {
         List<Medications> inventory = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/java/org/example/dao/DrugDao.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/java/org/example/dao/Medications.csv"))) {
             String line = reader.readLine();
 
             while ((line = reader.readLine()) != null) {
@@ -25,7 +25,7 @@ public class LoadMedications {
                 inventory.add(medications);
             }
         } catch (IOException e) {
-            System.err.println("Error reading DrugDao.csv file: " + e.getMessage());
+            System.err.println("Error reading Medications.csv file: " + e.getMessage());
         }
 
         return inventory;
