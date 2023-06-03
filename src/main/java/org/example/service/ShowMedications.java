@@ -7,9 +7,21 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ShowMedications {
+public class ShowMedications implements Service{
 
-    public static void listDrug(String order, List<Medications> drugs) {
+
+    @Override
+    public void searchDrugs(List<Medications> inventory, String parameter, String value, List<Medications> results) {
+
+    }
+
+    @Override
+    public List<Medications> loadInventory() {
+        return null;
+    }
+
+    @Override
+    public void listDrug(String order, List<Medications> drugs) {
         List<Medications> sorted = new ArrayList<>(drugs);
         switch (order) {
             case "id":

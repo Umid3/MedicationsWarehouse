@@ -4,9 +4,9 @@ import org.example.dao.Medications;
 
 import java.util.List;
 
-public class FindMedications {
-
-    public static void searchDrugs(List<Medications> inventory, String parameter, String value, List<Medications> results) {
+public class FindMedications implements  Service{
+    @Override
+    public void searchDrugs(List<Medications> inventory, String parameter, String value, List<Medications> results) {
         for (Medications medications : inventory) {
             switch (parameter) {
                 case "id":
@@ -48,4 +48,20 @@ public class FindMedications {
             System.out.println(medications);
         }
     }
+
+    @Override
+    public List<Medications> loadInventory() {
+
+        return null;
+    }
+
+    @Override
+    public void listDrug(String order, List<Medications> drugs) {
+
+    }
+
+
+
+
+
 }

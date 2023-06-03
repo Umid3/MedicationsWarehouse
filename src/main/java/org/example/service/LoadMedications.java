@@ -6,9 +6,15 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadMedications {
+public class LoadMedications implements  Service{
 
-    public static List<Medications> loadInventory() {
+    @Override
+    public void searchDrugs(List<Medications> inventory, String parameter, String value, List<Medications> results) {
+
+    }
+
+    @Override
+    public List<Medications> loadInventory() {
         List<Medications> inventory = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader("src/main/java/org/example/dao/Medications.csv"))) {
@@ -29,6 +35,11 @@ public class LoadMedications {
         }
 
         return inventory;
+    }
+
+    @Override
+    public void listDrug(String order, List<Medications> drugs) {
+
     }
 
 }

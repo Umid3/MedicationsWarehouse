@@ -1,12 +1,17 @@
 package org.example.view;
 
-public class FindMedication {
-
-    public static void askSearchParameter() {
+public class FindMedication implements View{
+    @Override
+    public void askSearchParameter() {
         System.out.print("Enter search parameter (ID, name, type, price, amount): ");
     }
-
-    public static void askSearchValue() {
+    @Override
+    public void askSearchValue() {
         System.out.print("Enter search value: ");
+    }
+
+    @Override
+    public void printView() {
+
     }
 }

@@ -1,8 +1,18 @@
 package org.example.view;
 
-public class ShowMedication {
+public class ShowMedication implements View{
 
-    public static void printView(){
+    @Override
+    public void askSearchParameter() {
+
+    }
+
+    @Override
+    public void askSearchValue() {
+
+    }
+    @Override
+    public void printView(){
         System.out.print("Enter sort order (ID, name, type, price, amount): ");
     }
 }

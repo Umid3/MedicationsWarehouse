@@ -1,19 +1,34 @@
 package org.example.controllers;
 
 import org.example.dao.Medications;
+import org.example.service.ShowMedications;
+import org.example.view.ShowMedication;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static org.example.service.ShowMedications.listDrug;
-import static org.example.view.ShowMedication.printView;
 
-public class Show {
+public class Show implements Controllers{
 
-    public static void listProducts(List<Medications> inventory) {
+
+    ShowMedications showMedications =new ShowMedications();
+    ShowMedication  showMedication =new ShowMedication();
+
+    @Override
+    public void searchProducts(List<Medications> inventory) {
+
+    }
+
+    @Override
+    public void listProducts(List<Medications> inventory) {
         Scanner scanner = new Scanner(System.in);
-        printView();
+        showMedication.printView();
         String order = scanner.nextLine().trim().toLowerCase();
-        listDrug(order, inventory);
+        showMedications.listDrug(order, inventory);
+    }
+
+    @Override
+    public void control() {
+
     }
 }

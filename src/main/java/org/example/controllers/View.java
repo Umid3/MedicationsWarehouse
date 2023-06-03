@@ -1,26 +1,26 @@
 package org.example.controllers;
 
 import org.example.dao.Medications;
+import org.example.service.LoadMedications;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static org.example.controllers.Show.listProducts;
-import static org.example.service.LoadMedications.loadInventory;
-import static org.example.controllers.Find.searchProducts;
-
 public class View {
+    LoadMedications loader = new LoadMedications();
 
-    public static void control() {
-        List<Medications> drugs = loadInventory();
+    public void control() {
+        List<Medications> drugs = loader.loadInventory();
+        Find find = new Find();
+        Show show = new Show();
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("\nEnter command (A-C): ");
             String command = scanner.nextLine();
             switch (command) {
-                case "A", "a" -> searchProducts(drugs);
-                case "B", "b" -> listProducts(drugs);
+                case "A", "a" -> find.searchProducts(drugs);
+                case "B", "b" -> show.listProducts(drugs);
                 case "C", "c" -> {
                     System.out.println("Exiting application...");
                     scanner.close();
