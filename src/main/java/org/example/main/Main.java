@@ -1,7 +1,9 @@
 package org.example.main;
-import org.example.controllers.View;
+
+import org.example.controllers.ControllersClass;
+
 public class Main {
-    static View view = new View();
+    static ControllersClass controllersClass =new ControllersClass();
 
     public static void main(String[] args) {
         System.out.println("Store application (Created on April 29, 2023)");
@@ -15,6 +17,6 @@ public class Main {
         System.out.println("A. Search products");
         System.out.println("B. Show all products");
         System.out.println("C. Exit");
-        view.control();
+        controllersClass.control();
     }
 }
