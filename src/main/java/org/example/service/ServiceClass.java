@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ShowMedications implements Service{
+public class ServiceClass implements Service{
 
 
     @Override

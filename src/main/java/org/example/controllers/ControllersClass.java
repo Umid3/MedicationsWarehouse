@@ -2,8 +2,8 @@ package org.example.controllers;
 
 import org.example.dao.Medications;
 import org.example.service.Service;
-import org.example.service.ShowMedications;
-import org.example.view.FindMedication;
+import org.example.service.ServiceClass;
+import org.example.view.ViewClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,20 +12,20 @@ import java.util.Scanner;
 
 
 public class ControllersClass implements Controllers {
-    ShowMedications showMedications =new ShowMedications();
-    FindMedication findMedication =new FindMedication();
+    ServiceClass serviceClass =new ServiceClass();
+    ViewClass viewClass =new ViewClass();
     private Service service;
 
     public ControllersClass() {
-        this.service = new ShowMedications();
+        this.service = new ServiceClass();
     }
 
     @Override
     public void searchProducts(List<Medications> inventory) {
         Scanner scanner = new Scanner(System.in);
-        findMedication.askSearchParameter();
+        viewClass.askSearchParameter();
         String parameter = scanner.nextLine().trim().toLowerCase();
-        findMedication.askSearchValue();
+        viewClass.askSearchValue();
         String value = scanner.nextLine().trim().toLowerCase();
         List<Medications> results = new ArrayList<>();
         service.searchDrugs(inventory, parameter, value, results);
@@ -34,15 +34,15 @@ public class ControllersClass implements Controllers {
     @Override
     public void listProducts(List<Medications> inventory) {
         Scanner scanner = new Scanner(System.in);
-        findMedication.printView();
+        viewClass.printView();
         String order = scanner.nextLine().trim().toLowerCase();
-        showMedications.listDrug(order, inventory);
+        serviceClass.listDrug(order, inventory);
     }
 
     @Override
     public void control() {
 
-        List<Medications> drugs = showMedications.loadInventory();
+        List<Medications> drugs = serviceClass.loadInventory();
         ControllersClass controllersClass = new ControllersClass();
 
 
